@@ -79,11 +79,7 @@ const Fruit = () => {
     }
 
     setTimeout(() => {
-      setdataAll((prevData) => {
-        const checkDuplicate = prevData.some((item) => item.name === name);
-        return checkDuplicate ? prevData :[...prevData, { type, name }];
-      });
-
+      setdataAll((prevData) => [...prevData, { type, name }]);
       if (type === "Fruit") {
         setallFruit((prev) => prev.filter((item) => item.name !== name));
       } else {
